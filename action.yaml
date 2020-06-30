@@ -1,0 +1,17 @@
+name: 'uni-resolver-test-results-aggregator'
+description: 'Aggregator for Uni Resolver tests'
+inputs:
+  repo:
+    description: 'Repo to deploy results'
+    required: false
+    default: git@github.com:BernhardFuchs/test-results-aggregator.git
+  branch:
+    description: 'Branch where results should be pushed'
+    required: false
+    default: master
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repo }}
+    - ${{ inputs.branch }}
