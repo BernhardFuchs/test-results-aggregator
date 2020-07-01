@@ -9,6 +9,7 @@ echo "$INPUT_BRANCH"
 echo "$INPUT_RESULTS_FOLDER"
 
 git clone "$INPUT_REPO"
+wait
 cd "$(basename "$INPUT_REPO" ".${INPUT_REPO##*.}")" || exit
 git checkout -b "$INPUT_BRANCH"
 
